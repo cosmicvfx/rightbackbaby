@@ -1,0 +1,27 @@
+//variables
+var vid;
+var playing = false;
+var completion;
+var song;
+
+
+//create video
+function setup() {
+  createCanvas(0, 0);
+  vid = createVideo("weberightback.mp4");
+  vid.size(500, 400);
+  vid.play();
+  playing = true;
+  song = loadSound("rightbackaudio.mp3");
+}
+
+//AUDIO
+function mousePressed() {
+  if ( song.isPlaying() ) {
+    song.stop();
+    background(255,0,0);
+  } else {
+    song.play();
+    background(0,255,0);
+  }
+}
